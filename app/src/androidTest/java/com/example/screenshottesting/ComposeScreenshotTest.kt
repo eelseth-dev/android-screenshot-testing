@@ -12,7 +12,7 @@ class ComposeScreenshotTest : ScreenshotTest {
 
     @Test
     fun rendersGreetingMessageForTheSpecifiedPerson() {
-        composeRule.setContent { Greeting("Hi Android") }
+        composeRule.setContent { Greeting("Android") }
         compareScreenshot(composeRule)
     }
 }

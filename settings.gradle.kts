@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "ScreenshotTesting"
 include(":app")
- 
+include(":app:base")
+include(":sync")
+include(":data")
+include(":base")

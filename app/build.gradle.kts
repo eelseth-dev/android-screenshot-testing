@@ -8,6 +8,9 @@ plugins {
 
     // Shot library
     id("shot")
+
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -55,13 +58,14 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/versions/**"
         }
     }
 
     // Shot library
     shot {
         applicationId = "com.example.screenshottesting"
-        tolerance = 0.15 // 0.00% to 100.0%
+        tolerance = 0.1 // 0.00% to 100.0%
     }
 }
 
@@ -75,6 +79,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.process)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -85,4 +90,12 @@ dependencies {
 
     // Compose Screenshot library
     screenshotTestImplementation(libs.androidx.ui.tooling)
+
+    implementation(project(":base"))
+    implementation(project(":data"))
+
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    implementation ("com.twilio:sync-android-kt:4.0.0")
 }
