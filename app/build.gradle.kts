@@ -83,6 +83,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
     // Compose Screenshot library
     screenshotTestImplementation(libs.androidx.ui.tooling)
 }
